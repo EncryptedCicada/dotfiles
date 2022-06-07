@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+while true;
+do 
+	read -p "Do you want to [A]ctivate or [D]eactivate the gpu? (A/D) " yn
+
+	case $yn in
+		A ) echo okay, activating;
+			""echo 1 > /sys/bus/pci/rescan"";
+			break;;
+		D ) echo okay, deactivating;
+			""echo 1 > /sys/bus/pci/devices/0000:03:00.0/remove"";
+			break;;
+		* ) echo please try again;;
+	esac
+done
+
+
