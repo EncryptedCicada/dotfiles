@@ -1,0 +1,9 @@
+popup_during_fullscreen smart
+exec_once $HOME/.config/eww/scripts/coreCountCalc
+export XDG_CURRENT_DESKTOP
+exec=gnome-keyring-daemon -r -d
+exec playerctl daemon
+
+
+## do once after installation
+#git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
