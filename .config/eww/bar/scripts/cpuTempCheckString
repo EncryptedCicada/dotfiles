@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Get core count
+CORE_COUNT=$(cat $HOME/.config/eww/scripts/corecount | xargs)
+
+echo $CORE_COUNT
+RETURN_CMD="CPU_TEMPS.core_0"
+
+for (( i = 1; i < $CORE_COUNT; i++ ))
+do
+	RETURN_CMD="$RETURN_CMD + CPU_TEMPS.core_$i"
+done
+
+echo "{($RETURN_CMD) / $CORE_COUNT}" > coretempstr
+

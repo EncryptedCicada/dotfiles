@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Get core count
+CORE_COUNT=`lscpu | grep 'Core(s) per socket:' | awk -F ':' '{ print $2 }' | sed 's/ //g'`
+
+echo "$CORE_COUNT" > corecount
+

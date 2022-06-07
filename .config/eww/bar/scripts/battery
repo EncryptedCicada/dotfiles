@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# This script displays battery icon according to the charge level and charging state
+
+# Author: Varnit Singh
+# e-mail: dev.varnit@gmail.com
+# License: GPL3
+
+# Dependencies: `upower`
+
+bat=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0)
+state=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "state" | awk -F":" '{print $2}' | sed "s/\s//g")
+level=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "percentage:" | awk -F ":" '{print $2}' | sed "s/\s//g;s/%//g")
+# level=${level::-1}
+
+icon() {
+if [[ "$state" == "charging" ]]; then
+
+    if [[ "$level" -ge "95" ]]; then
+        echo $HOME/.local/icons/System/bat-full-charging.svg
+    elif [[ "$level" -ge "75" ]]; then
+        echo $HOME/.local/icons/System/bat-threefourth-charging.svg
+    elif [[ "$level" -ge "35" ]]; then
+        echo $HOME/.local/icons/System/bat-half-charging.svg
+    elif [[ "$level" -ge "15" ]]; then
+        echo $HOME/.local/icons/System/bat-quarter-charging.svg
+    else
+        echo $HOME/.local/icons/System/bat-empty-charging.svg
+    fi
+else
+    if [[ "$level" -ge "95" ]]; then
+        echo $HOME/.local/icons/System/bat-full.svg
+    elif [[ "$level" -ge "75" ]]; then
+        echo $HOME/.local/icons/System/bat-threefourth.svg
+    elif [[ "$level" -ge "35" ]]; then
+        echo $HOME/.local/icons/System/bat-half.svg
+    elif [[ "$level" -ge "15" ]]; then
+        echo $HOME/.local/icons/System/bat-quarter.svg
+    else
+        echo $HOME/.local/icons/System/bat-empty.svg
+    fi
+fi
+}
+
+if [[ $1 = "-l" ]]; then
+    echo ${level}%
+elif [[ $1 = "-i" ]]; then
+    icon
+fi

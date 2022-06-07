@@ -1,0 +1,1 @@
+(CPU_TEMPS.core_0 + CPU_TEMPS.core_1 + CPU_TEMPS.core_2 + CPU_TEMPS.core_3 + CPU_TEMPS.core_4 + CPU_TEMPS.core_5) / 6

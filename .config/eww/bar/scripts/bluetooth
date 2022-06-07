@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Define icon behaviour
+icon() {
+        # not connected
+        if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]; then
+                echo "󰂲"
+        else
+                # connected, but no device
+                if [ $(echo info | bluetoothctl | grep 'Device' | wc -c) -eq 0 ]; then
+                        echo "󰂯"
+                else
+                        echo "󰂱"
+                fi
+        fi
+}
+
+# Output state and battery info
+state() {
+        # not connected
+        if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]; then
+                echo "Disconnected"
+        else
+                # connected, but no device
+                if [ $(echo info | bluetoothctl | grep 'Device' | wc -c) -eq 0 ]; then
+                        echo "Connected"
+                else
+                        # get device alias
+                        DEVICE_NAME=`echo info | bluetoothctl | grep 'Alias:' | awk -F:  '{ print $2 }'`
+                        DEVICE=`echo info | bluetoothctl | grep 'Device' | awk -F ' ' '{ print $2 }' | sed 's/:/_/g'`
+                        BATTERY=`upower -i /org/freedesktop/UPower/devices/headset_dev_${DEVICE} | grep percentage | cut -b 26-28`
+                        echo "$DEVICE_NAME ($BATTERY)"
+                fi
+        fi
+}
+
+if [[ $1 == "-l" ]]; then
+        state
+elif [[ $1 == "-i" ]]; then
+        icon
+fi

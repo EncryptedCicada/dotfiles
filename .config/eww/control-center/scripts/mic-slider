@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+if [[ "$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | wc -l)" = "1" ]]; then
+    
+    vol=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk -F ": " '{print $2*100}')
+    
+    if [[ ${vol} -ge 80 ]]; then
+        echo "󰍬"
+        elif [[ ${vol} -ge 40 ]]; then
+        echo "󰍬"
+        elif [[ ${vol} -ge 10 ]]; then
+        echo "󰍬"
+    else
+        echo "󰍭"
+    fi
+else
+    echo "󰍭"
+fi

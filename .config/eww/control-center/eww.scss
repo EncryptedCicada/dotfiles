@@ -1,0 +1,214 @@
+* {
+  all: unset;
+  transition: 200ms ease-out;
+}
+
+.control-center {
+  background-color: #181f21;
+  font-family: "SF Pro Display", "JetBrains Mono Nerd Font", sans-serif;
+  border-radius: 20px;
+}
+
+.control-center-empty-box {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.control-center-empty-label {
+  padding-top: 2em;
+  color: #ef7d7d;
+  font-size: 22;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.control-center-scroll-box {
+  padding: 2em 1.5em 0 1.1em;
+}
+
+.control-center-body {
+  color: #dadada;
+}
+
+.control-center-tray {
+  background-color: #22292b;
+  margin: 20px 20px 0px 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px #141414;
+}
+
+.control-center-buttons {
+  background-color: #181f21;
+  margin: 10px 10px 0px 10px;
+  border-radius: 20px;
+  padding: 15px 0px 15px 0px;
+}
+
+.net-status-on {
+  color: #181f21;
+  background-color: #67b0e8;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.net-status-off {
+  color: #dadada;
+  background-color: #333c44;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.volume-status-on {
+  color: #181f21;
+  background-color: #8ccf7e;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.volume-status-off {
+  color: #dadada;
+  background-color: #333c44;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.bluetooth-status-on {
+  color: #181f21;
+  background-color: #c47fd5;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.bluetooth-status-off {
+  color: #dadada;
+  background-color: #333c44;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+/* TODO
+.dunst-status-on {
+  color: #181f21;
+  background-color: #e06e6e;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.dunst-status-off {
+  color: #dadada;
+  background-color: #333c44;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.redshift-status-on {
+  color: #181f21;
+  background-color: #e5c76b;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+
+.redshift-status-off {
+  color: #dadada;
+  background-color: #333c44;
+  margin: 0px 19px 0px 19px;
+  padding: 0.5em 0em 0.5em 0em;
+  border-radius: 25px;
+  font-size: 24px;
+}
+*/
+
+.volume-slider-stuff {
+  margin: 20px 20px 10px 20px;
+}
+
+.volume-slider-icon {
+  color: #e5c76b;
+  padding: 5px 5px 5px 5px;
+  margin-right: 10px;
+  font-size: 22px;
+  background-color: #3b4244;
+  border-radius: 50px;
+}
+
+
+.volume-slider trough {
+  border-radius: 20px;
+  background-color: #3b4244;
+  box-shadow: 0px 0px 7px #141414;
+}
+
+.volume-slider highlight {
+  padding: 0.5em;
+  border-radius: 20px;
+  background: linear-gradient(to left, #e06e6e, #ef7d7d);
+}
+
+.mic-slider-stuff {
+  margin: 10px 20px 10px 20px;
+}
+
+.mic-slider-icon {
+  color: #c47fd5;
+  padding: 5px 5px 5px 5px;
+  margin-right: 10px;
+  font-size: 22px;
+  background-color: #3b4244;
+  border-radius: 50px;
+}
+
+
+.mic-slider trough {
+  border-radius: 20px;
+  background-color: #3b4244;
+  box-shadow: 0px 0px 7px #141414;
+}
+
+.mic-slider highlight {
+  padding: 0.5em;
+  border-radius: 20px;
+  background: linear-gradient(to left, #67b0e8, #67cbe7);
+}
+
+.brightness-slider-stuff {
+  margin: 7px 20px 7px 20px;
+}
+
+.brightness-slider-icon {
+  color: #8ccf7e;
+  padding: 5px 5px 5px 5px;
+  margin-right: 10px;
+  font-size: 20px;
+  background-color: #3b4244;
+  border-radius: 50px;
+}
+
+.brightness-slider trough {
+    border-radius: 20px;
+    background-color: #3b4244;
+    box-shadow: 0px 0px 7px #141414;
+ }
+  
+.brightness-slider highlight {
+    padding: 0.5em;
+    border-radius: 20px;
+    background: linear-gradient(to left, #e5c76b, #f4d67a);
+}

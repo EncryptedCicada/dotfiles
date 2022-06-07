@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk -F ": " '{print $2*100}'
